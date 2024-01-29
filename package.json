@@ -1,0 +1,14 @@
+{
+  "name": "spotify-tracker",
+  "version": "1.0.0",
+  "description": "Web Scrapper created to transfer my spotify playlist to youtube playlist",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "André Freitas Silveira",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^21.9.0"
+  }
+}
