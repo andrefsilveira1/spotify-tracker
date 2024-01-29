@@ -14,6 +14,6 @@ The script was developed using puppeteer lib and use it to make all the operatio
 
 # Contributions
 
-- [] Solve problem with large playlists (the algorithm must get all tracks)
+- [ ] Solve problem with large playlists (the algorithm must get all tracks)
 
-- [] Make selection faster with headless and throw the final result to the user
+- [ ] Make selection faster with headless and throw the final result to the user
