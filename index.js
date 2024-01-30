@@ -33,6 +33,7 @@ const start = async () => {
 
     await page.goto(link, { waitUntil: "networkidle2" });
 
+    await sleep(2000);
 
     await page.waitForSelector('div[data-testid="tracklist-row"]');
 
@@ -62,7 +63,7 @@ const start = async () => {
     // There is something going wrong with my playlist selector. 
     // Most part of the songs are not included by my query selector. Has to be fixed.
 
-    
+
     console.log("track:", tracklist);
     await page.goto(yt_url, { waitUntil: "networkidle2" });
 
@@ -73,7 +74,6 @@ const start = async () => {
         let song = `${track.artist} ${track.song}`;
         await page.waitForSelector("input[name=search_query]");
         await page.evaluate(() => (document.querySelector("input[name=search_query]").value = ""));
-        await sleep(4000);
 
         // Type song name
 
@@ -84,14 +84,6 @@ const start = async () => {
         await page.click("#search-icon-legacy");
         await page.waitForSelector("#contents");
         await sleep(3000);
-
-        await page.mouse.move(500, 300);
-        await page.evaluate(() => {
-            let labels = Array.from(document.querySelectorAll("#label"));
-            labels[1].click();
-        })
-
-        // Await for video loading and click 3 dots button
 
         await page.waitForSelector("yt-icon-button#button");
         await page.evaluate(() => {
@@ -115,6 +107,7 @@ const start = async () => {
 
         }, textContent);
 
+        await sleep(500);
     }
 
 }
